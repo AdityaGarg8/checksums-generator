@@ -17,8 +17,7 @@ jobs:
           REPO_PATH=$(pwd)
           WORKING_PATH=/home/work
           KERNEL_PATH="${WORKING_PATH}/linux-kernel"
-          sudo git clone --depth 1 --single-branch --branch "${KERNEL_BRANCH}" \
-          "${KERNEL_REPOSITORY}" "${KERNEL_PATH}"
+          sudo git clone "${KERNEL_REPOSITORY}" "${KERNEL_PATH}"
           cd "${KERNEL_PATH}"
           sudo tar -czvf /home/work/jammy.tar.gz *
     - name: Upload Kernel
