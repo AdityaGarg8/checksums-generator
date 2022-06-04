@@ -9,7 +9,7 @@ jobs:
          branch=pie-x86
          sudo apt -y install git gcc curl make repo libxml2-utils flex m4
          sudo apt -y install openjdk-8-jdk lib32stdc++6 libelf-dev mtools
-         sudo apt -y install libssl-dev python-enum34 python-mako syslinux-utils
+         sudo apt -y install libssl-dev python3-enum34 python-enum34 python3-mako syslinux-utils
          mkdir android-x86
          cd android-x86
          repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b $branch
