@@ -2,18 +2,15 @@ name: Generate md5 sums
 on: [push]
 jobs:
   Generate-Sums:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Generate sums
       run: |
-         sudo mkdir /work
-         cd /work
-         pkgver=5.16.5
-         sudo wget -q https://www.kernel.org/pub/linux/kernel/v${pkgver//.*}.x/linux-${pkgver}.tar.xz
-         md5sum *tar.xz
-         sha256sum *tar.xz
-    - name: Upload Kernel
-      uses: actions/upload-artifact@v2
-      with:
-        name: Kernel
-        path: /work/*.tar.xz
+         branch=pie-x86
+         sudo apt -y install git gcc curl make repo libxml2-utils flex m4
+         sudo apt -y install openjdk-8-jdk lib32stdc++6 libelf-dev mtools
+         sudo apt -y install libssl-dev python-enum34 python-mako syslinux-utils
+         mkdir android-x86
+         cd android-x86
+         repo init -u git://git.osdn.net/gitroot/android-x86/manifest -b $branch
+         repo sync --no-tags --no-clone-bundle
