@@ -9,10 +9,10 @@ jobs:
          sudo mkdir /work
          cd /work
          sudo wget -q https://git.kernel.org/torvalds/t/linux-5.19-rc6.tar.gz
-         md5sum *tar.xz
-         sha256sum *tar.xz
+         md5sum *tar.gz
+         sha256sum *tar.gz
     - name: Upload Kernel
       uses: actions/upload-artifact@v2
       with:
         name: Kernel
-        path: /work/*.tar.xz
+        path: /work/*.tar.gz
