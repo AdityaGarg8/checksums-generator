@@ -8,8 +8,7 @@ jobs:
       run: |
          sudo mkdir /work
          cd /work
-         pkgver=5.16.5
-         sudo wget -q https://www.kernel.org/pub/linux/kernel/v${pkgver//.*}.x/linux-${pkgver}.tar.xz
+         sudo wget -q https://git.kernel.org/torvalds/t/linux-5.19-rc6.tar.gz
          md5sum *tar.xz
          sha256sum *tar.xz
     - name: Upload Kernel
