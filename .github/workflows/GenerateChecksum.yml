@@ -8,7 +8,7 @@ jobs:
       run: |
          sudo mkdir /work
          cd /work
-         sudo wget -q https://git.kernel.org/torvalds/t/linux-5.19-rc6.tar.gz
+         sudo wget -q https://git.kernel.org/torvalds/t/linux-5.19-rc7.tar.gz
          md5sum *tar.gz
          sha256sum *tar.gz
     - name: Upload Kernel
